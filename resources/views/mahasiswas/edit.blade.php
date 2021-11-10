@@ -34,7 +34,7 @@
                     <div class="form-group">
                         <label for="Kelas">Kelas</label> 
                         <select name="Kelas" id="Kelas" class="form-control">
-                            @foreach($kelas as $kls)
+                            @foreach($Kelas as $kls)
                             <option value="{{$kls->id}}" {{$mahasiswa->kelas_id == $kls->id ? 'selected' : '' }}>{{$kls->nama_kelas}}</option>
                             @endforeach
                         </select>

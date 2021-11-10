@@ -10,10 +10,10 @@ use Illuminate\Database\Eloquent\Model; //Model Eloquent
 
 class Mahasiswa extends Model //Definisi Model
 {
-    protected $table="mahasiswa"; // Eloquent akan membuat model mahasiswa menyimpan record di tabel mahasiswas
-    public $timestamps= false;
+    protected $table = "mahasiswa"; // Eloquent akan membuat model mahasiswa menyimpan record di tabel mahasiswas
+    public $timestamps = false;
     protected $primaryKey = 'Nim'; // Memanggil isi DB Dengan primarykey
-    
+
     protected $fillable = [
         'Nim',
         'Nama',
@@ -22,12 +22,14 @@ class Mahasiswa extends Model //Definisi Model
         'No_Handphone',
         'Email',
         'Tanggal_Lahir',
-        ];
+    ];
 
     public function kelas()
     {
         return $this->belongsTo(Kelas::class);
     }
+    public function mahasiswa_matakuliah()
+    {
+        return $this->belongsTo(mahasiswa_matakuliah::class);
+    }
 };
-
-

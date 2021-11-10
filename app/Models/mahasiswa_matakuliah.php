@@ -4,15 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Mahasiswa;
 
-class Kelas extends Model
+class mahasiswa_matakuliah extends Model
 {
-    use HasFactory;
-    protected $table = 'kelas'; //mendefinisikan bahwa model ini terkait dengan tabel kelas
+    protected $table = "mahasiswa_matakuliah";
 
     public function mahasiswa()
     {
         return $this->hasMany(mahasiswa::class);
+    }
+    public function matakuliah()
+    {
+        return $this->hasMany(matakuliah::class);
     }
 }
